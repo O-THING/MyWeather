@@ -29,7 +29,10 @@ android {
 }
 
 dependencies {
-
+    implementation 'org.litepal.android:java:1.4.1'
+    implementation(libs.okhttp)
+    implementation('com.google.code.gson:gson:2.10.1')
+    implementation(libs.github.glide)
     implementation libs.appcompat
     implementation libs.material
     testImplementation libs.junit

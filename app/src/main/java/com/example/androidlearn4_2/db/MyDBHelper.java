@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class dbHelper extends SQLiteOpenHelper {
+public class MyDBHelper extends SQLiteOpenHelper {
     // 省表
     public static final String CREATE_PROVINCE=
             "CREATE TABLE Province (" +
@@ -19,22 +19,19 @@ public class dbHelper extends SQLiteOpenHelper {
             "id integer PRIMARY KEY,"+
             "cityName text,"+
             "cityNode integer,"+
-            "provinceID integer)";  // 外键（？）
+            "provinceId integer)";  // 外键（？）
     // 县表
     public static final String CREATE_COUNTY=
             "CREATE TABLE County("+
             "id integer PRIMARY KEY,"+
             "countyName text,"+
             "weatherId integer,"+
-            "cityID integer)";
+            "cityId integer)";
 
-    private Context mContext;
 
-    public dbHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-        mContext=context;
+    public MyDBHelper(Context context){
+        super(context,"WeatherForecast.db",null,1);
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase db){

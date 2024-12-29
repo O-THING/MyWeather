@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fff"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary">
+            <!--?attr/actionBarSize为资源引用，它引用了当前主题中定义的actionBarSize属性值-->
+            <!--?attr/colorPrimary也为是一个资源引用，它引用了当前主题中定义的colorPrimary属性值。
+                colorPrimary通常用于应用的主色调，比如应用的ActionBar、状态栏等。-->
+            <!--在Android开发中，?attr和@都是用来引用资源的，但它们的作用和使用场景有所不同。
+                @符号用于引用资源文件中定义的资源，比如颜色、尺寸、字符串等。例如，@color/purple_500就是引用名为purple_500的颜色资源。
+                ?attr用于引用主题中定义的属性。这是一个动态的引用，它会根据当前应用的主题来决定使用哪个值。例如，?attr/colorPrimary会根据当前主题中定义的colorPrimary属性来决定颜色。-->
+            <!--注意：
+                colorPrimary在Theme.xml中有显示定义，而actionBarSize无却可直接使用是因为：
+                actionBarSize是一个系统属性，它通常不需要在主题中显式定义
+                这是一个固定的大小，用于ActionBar的高度
+                在不同的Android版本和设备上，这个值可能会有所不同，但它是一个标准的属性，可以直接在布局文件中通过?attr/actionBarSize来引用-->
+            <!--PS:
+                actionBar是Android中一个重要的组件，它通常位于应用界面的顶部，提供了导航、标题、操作按钮等功能-->
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#fff"
+                android:textSize="20sp"/>
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/ic_back"/>
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

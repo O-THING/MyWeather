@@ -10,10 +10,8 @@
         android:orientation="vertical"
         android:background="#fff"
         tools:ignore="MissingConstraints">
-
         <RelativeLayout
             android:layout_width="match_parent"
-
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary">
             <!--?attr/actionBarSize为资源引用，它引用了当前主题中定义的actionBarSize属性值-->
